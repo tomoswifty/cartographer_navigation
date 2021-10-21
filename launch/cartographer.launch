@@ -25,9 +25,10 @@
     <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args="
           -configuration_directory
               $(find cartgrapher_navigation)/configuration_files
-          -configuration_basename outdoor_2d_with_imu.lua" output="screen">
+          -configuration_basename outdoor_2d_with_imu_odom.lua" output="screen">
           <remap from="scan" to="/scan" />
           <remap from="imu" to="/imu/data" />
+          <remap from="odom" to="/odom" />
           <!--<remap from="fix" to="/ublox_gps/fix" />-->
     </node>
 

@@ -13,12 +13,15 @@
         <param name="inverted" type="bool" value="false"/>
         <param name="angle_compensate" type="bool" value="true"/>
     </node>
+    
+    <!-- IMU publish -->
+    <include file="$(find adi_driver)/launch/adis16470.launch" />
 
     <!-- outdoor -->
     <node name="cartographer_node" pkg="cartographer_ros" type="cartographer_node" args="
           -configuration_directory
               $(find cartgrapher_navigation)/configuration_files
-          -configuration_basename outdoor_2d.lua" output="screen">
+          -configuration_basename outdoor_2d_with_imu.lua" output="screen">
     </node>
 
 	<!-- Additional node which converts Cartographer map into ROS occupancy grid map. Not used and can be skipped in this case -->

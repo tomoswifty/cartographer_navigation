@@ -26,7 +26,7 @@
     </visual>
   </link>
 
-  <link name="vertical_laser_link">
+  <link name="gps">
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -50,9 +50,9 @@
     <origin xyz="0.1007 0 0.0558" />
   </joint>
 
-  <joint name="vertical_laser_link_joint" type="fixed">
+  <joint name="gps_joint" type="fixed">
     <parent link="base_link" />
-    <child link="vertical_laser_link" />
+    <child link="gps" />
     <origin rpy="0 -1.570796 3.141593" xyz="0.1007 0 0.1814" />
   </joint>
 </robot>
